@@ -41,7 +41,7 @@ pipeline {
         stage('Docker Image') {
             steps {
                 echo 'Docker Image building'
-				sh 'docker build -t devopshubg333/batch13:${BUILD_NUMBER} .'
+				sh 'docker build -t sivaprasad2646/batch13:${BUILD_NUMBER} .'
             }
         }
 		
@@ -54,7 +54,7 @@ pipeline {
             sh 'docker login -u sivaprasad2646 -p ${dockerhub}'
 			
 			 }
-			   sh 'docker push devopshubg333/batch13:${BUILD_NUMBER}'
+			   sh 'docker push sivaprasad2646/batch13:${BUILD_NUMBER}'
 			   
            
 				}
