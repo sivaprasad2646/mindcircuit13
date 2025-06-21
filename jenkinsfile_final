@@ -51,7 +51,7 @@ pipeline {
 			 script {
 			withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) 
 			{
-            sh 'docker login -u devopshubg333 -p ${dockerhub}'
+            sh 'docker login -u sivaprasad2646 -p ${dockerhub}'
 			
 			 }
 			   sh 'docker push devopshubg333/batch13:${BUILD_NUMBER}'
@@ -67,7 +67,7 @@ pipeline {
 		
 		 environment {
             GIT_REPO_NAME = "mindcircuit13"
-            GIT_USER_NAME = "devopstraininghub"
+            GIT_USER_NAME = "sivaprasad2646"
         }
 		
             steps {
@@ -75,8 +75,8 @@ pipeline {
 				withCredentials([string(credentialsId: 'githubtoken', variable: 'githubtoken')]) 
 				{
                   sh '''
-                    git config user.email "gorekarmadhu@gmail.com"
-                    git config user.name "Madhu"
+                    git config user.email "sivasiva2646@gmail.com"
+                    git config user.name "sivaprasad2646"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/batch13:.*/batch13:${BUILD_NUMBER}/g" deploymentfiles/deployment.yml
                     git add .
